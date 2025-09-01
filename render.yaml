@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: crypto-news-bot-v2
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+    plan: starter  # Free tier
+    region: oregon  # or singapore
+    branch: main
