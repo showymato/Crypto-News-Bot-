@@ -1,509 +1,287 @@
-# 🚀 Crypto News Digest Telegram Bot V2.0[
+🚀 Crypto News Digest Telegram Bot V2.0
+[
+[
+[
 
-> **Your daily crypto companion delivering AI-curated insights directly to Telegram!**
+Your intelligent crypto companion delivering AI-curated news insights directly to Telegram
 
-## ✨ Features🧠 **AI-Powered Intelligence**
-- Smart news aggregation from top crypto sources
-- Advanced sentiment analysis with confidence scoring
-- Automated deduplication and relevance ranking
-- Investment impact assessment for each story
+✨ Key Features
+🧠 AI-Powered Analysis
 
-📊 **Rich Content Delivery**
-- Daily top 10 crypto news digest
-- Real-time trending news categorized by sentiment
-- Beautiful message formatting with emojis and structure
-- One-click sharing and bookmarking
+Daily top 10 crypto stories with sentiment analysis
 
-⚡ **Automation & Convenience**
-- Scheduled daily delivery at 9:00 AM UTC
-- Instant on-demand news access
-- User preference management
-- Multi-timezone support
+Smart deduplication and relevance ranking
 
-🛡️ **Enterprise-Grade Reliability**
-- Robust error handling and retry logic
-- Rate limiting and API optimization
-- Scalable architecture supporting 1000+ users
-- 99%+ uptime on free hosting tiers## 🤖 Bot Commands| Command | Description | Example |
-|---------|-------------|---------|
-| `/start` | 🎉 Welcome message & bot introduction | Get started with the bot |
-| `/today` | 📰 Get today's crypto digest (top 10) | Latest curated crypto news |
-| `/hot` | 🔥 Trending news by sentiment | Bullish/Bearish/Neutral categorization |
-| `/subscribe` | 🔔 Enable daily automated digests | Never miss important crypto news |
-| `/unsubscribe` | 🔕 Disable daily digests | Manage your notification preferences |
-| `/settings` | ⚙️ View current preferences | Check subscription status & preferences |
-| `/help` | 📖 Complete command reference | Detailed bot usage guide |
+Investment impact insights for each story
 
-## 🏗️ Tech Stack### Core Technologies- **Language**: Python 3.13+ (Latest stable)
-- **Bot Framework**: python-telegram-bot 21.5 (Full async support)
-- **AI/ML**: VADER Sentiment Analysis (Lightweight & accurate)
-- **Database**: SQLite3 (Zero-config, file-based)
-- **Task Scheduling**: APScheduler (Reliable job scheduling)
+Bullish/Bearish/Neutral categorization with confidence scores
 
-### Architecture Components```python
-# Modern async architecture
-async def main():
-    app = ApplicationBuilder().token(TOKEN).build()
-    await app.run_webhook(webhook_url=WEBHOOK_URL)
-```
+📱 Automated Delivery
 
-### Deployment Stack- **Primary**: Render.com (Free tier compatible)
-- **Alternatives**: Railway, Heroku, DigitalOcean Apps
-- **Container**: Docker support included
-- **Monitoring**: Built-in logging and health checks
+Scheduled daily digest at 9:00 AM UTC
 
-## 📰 News Sources### Premium Crypto News Outlets| Source | Coverage | RSS Feed |
-|--------|----------|----------|
-| **CoinDesk** | Leading crypto journalism | Market analysis & breaking news |
-| **CoinTelegraph** | Global crypto news | Technical analysis & trends |
-| **Decrypt** | Blockchain insights | DeFi, NFTs, Web3 coverage |
-| **CoinMarketCap** | Market-focused news | Price movements & listings |
-| **CryptoNews** | Community-driven content | Altcoins & emerging trends |
-| **The Block** | Institutional crypto news | Professional trading insights |
+Instant on-demand news access
 
-### Content Processing Pipeline```
-RSS Feeds → Content Extraction → AI Analysis → Sentiment Scoring →```nking → Formatting
-```
+Multi-source aggregation from trusted outlets
 
-## 🚀 Quick Start### Option 1: One-Click Deploy (Recommended)[
+Beautiful formatting with emojis and structure
 
-1. **Create Telegram Bot**:
-   ```
-   Message @BotFather on Telegram:
-   /newbot → Follow prompts → Get your```ken
-   ```
+⚡ Performance Optimized
 
-2. **Deploy to Render**:
-   - Click deploy button above
-   - Connect GitHub repository
-   - Add `TELEGRAM_BOT_TOKEN` in environment variables
-   - Deploy automatically!
+Lightweight architecture (~200MB memory)
 
-3. **Activate Bot**:
-   ```bash
-   # Set webhook (replace with your values)
-   curl "https://api.telegram.org/bot<TOKEN>/setWebhook?url=```NDER_URL>/webhook"
-   ```
+99%+ uptime on free hosting tiers
 
-### Option 2: Local Development```bash
-# Clone repository
+Supports 1000+ concurrent users
+
+Fast response times (<3 seconds)
+
+🤖 Bot Commands
+Command	Description
+/start	🎉 Welcome message and bot introduction
+/today	📰 Get today's top 10 crypto news digest
+/hot	🔥 Trending stories categorized by sentiment
+/subscribe	🔔 Enable daily automated news delivery
+/unsubscribe	🔕 Disable daily digest notifications
+/settings	⚙️ View your current preferences
+/help	📖 Complete command reference guide
+🚀 Quick Deployment
+Option 1: One-Click Deploy (Recommended)
+[
+
+Create Telegram Bot
+
+text
+Message @BotFather on Telegram:
+/newbot → Follow prompts → Get your token
+Deploy to Render
+
+Click deploy button above
+
+Connect your GitHub repository
+
+Add TELEGRAM_BOT_TOKEN in environment variables
+
+Deploy automatically!
+
+Set Webhook
+
+bash
+curl "https://api.telegram.org/bot<TOKEN>/setWebhook?url=<RENDER_URL>/webhook"
+Option 2: Local Development
+bash
+# Clone and setup
 git clone https://github.com/yourusername/crypto-news-bot-v2
 cd crypto-news-bot-v2
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-
-# Install dependencies
 pip install -r requirements.txt
 
 # Configure environment
-cp .env.example .env
-# Edit .env with your bot token
+export TELEGRAM_BOT_TOKEN="your_bot_token_here"
 
 # Run locally
 python main.py
-```
+🏗️ Tech Stack
+Core Technologies
 
-## 🌐 Deployment Options### Render.com (Free Tier - Recommended)```yaml
-# render.yaml
-services:
-  - type: web
-    name: crypto-news-bot
-    env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: python main.py
-    envVars:
-      - key: TELEGRAM_BOT_TOKEN
-        sync: false
-```
+Language: Python 3.13+ (async/await support)
 
-**Setup Steps**:
-1. Connect GitHub repo to Render
-2. Add environment variables in dashboard
-3. Deploy automatically on git push
-4. Set webhook URL in Telegram
+Bot Framework: python-telegram-bot 21.5
 
-### Railway```bash
-# One command deployment
-railway login
-railway init
-railway add TELEGRAM_BOT_TOKEN=your_token
-railway up
-```
+AI Analysis: VADER Sentiment Analysis
 
-### Docker Deployment```dockerfile
-FROM python:3.13-slim
+Database: SQLite3 (zero configuration)
 
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install -r requirements.txt
+Task Scheduling: APScheduler for daily digests
 
-COPY . .
-EXPOSE 8000
+Deployment Options
 
-CMD ["python", "main.py"]
-```
+Primary: Render.com (free tier compatible)
 
-```bash
-# Build and run
-docker build -t crypto-news-bot .
-docker run -e TELEGRAM_BOT_TOKEN=your_token -p 8000:8000 crypto-news-bot
-```
+Alternatives: Railway, Heroku, DigitalOcean
 
-### Heroku```bash
-# Using Heroku CLI
-heroku create your-crypto-bot
-heroku config:set TELEGRAM_BOT_TOKEN=your_```en
-git push heroku main
-```
+Container: Docker support included
 
-## ⚙️ Configuration### Environment Variables```env
+📰 News Sources
+Premium Crypto Outlets
+CoinDesk - Leading crypto journalism and market analysis
+
+CoinTelegraph - Breaking news and technical analysis
+
+Decrypt - Blockchain insights, DeFi, and Web3 coverage
+
+CoinMarketCap - Market-focused news and price movements
+
+CryptoNews - Community-driven content and altcoin coverage
+
+The Block - Institutional crypto news and trading insights
+
+Content Processing
+text
+RSS Feeds → AI Analysis → Sentiment Scoring → Relevance Ranking → User Delivery
+⚙️ Configuration
+Environment Variables
+text
 # Required
-TELEGRAM_BOT_TOKEN=1234567890:ABCDEFGHIJKLMNOPQRSTUVWXYZ
+TELEGRAM_BOT_TOKEN=your_bot_token_from_botfather
 
 # Optional (auto-detected on most platforms)
 PORT=8000
 RENDER_EXTERNAL_URL=https://your-app.onrender.com
-
-# Advanced Configuration
-DEBUG_MODE=false
-MAX_DAILY_REQUESTS=1000
-CACHE_DURATION=3600
-TIMEZONE=UTC
-```
-
-### News Sources Customization```python
+Customizing News Sources
+python
 # config.py
 NEWS_SOURCES = {
     'coindesk': {
-        'url': 'https://www.coindesk.com/arc```tboundfeeds/rss/',
+        'url': 'https://www.coindesk.com/arc/outboundfeeds/rss/',
         'weight': 1.0,
         'enabled': True
     },
     'cointelegraph': {
-        'url': 'https://cointelegraph.com/rss```        'weight': 0.9,
+        'url': 'https://cointelegraph.com/rss',
+        'weight': 0.9,
         'enabled': True
-    },
-    # Add custom sources
-    'your_source': {
-        'url': 'https://example.com/rss',
-        'weight': 0.8,
-        'enabled': False
     }
+    # Add more sources here
 }
-```
-
-### User Preferences```python
-# Support for user customization
-USER_SETTINGS = {
-    'timezone': 'UTC',
-    'digest_time': '09:00',
-    'max_stories': 10,
-    'sentiment_filter': 'all',  # bullish,```arish, neutral, all
-    'categories': ['bitcoin', 'ethereum', 'defi', 'nft']
-}
-```
-
-## 📊 Architecture Overview### System Design```
-┌─────────────────┐    ┌──────────────────┐    ```───────────────┐
+📊 Architecture Overview
+text
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
 │   RSS Sources   │────│  News Aggregator │────│  AI Processor   │
 │   (6+ outlets)  │    │  (Async fetch)   │    │  (VADER + NLP)  │
-└─────────────────┘    └──────────────────┘    └```──────────────┘
+└─────────────────┘    └──────────────────┘    └─────────────────┘
                                                           │
-┌─────────────────┐    ┌──────────────────```  ┌─────────────────┐
-│   Telegram      │────│    Bot Server    │────│```ssage Builder │
-│   Users (1000+) │    │  (Webhook Mode)  │    │ (Rich Markdown) │
-└─────────────────┘    └──────────────────┘    └─────────```─────┘
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+│   Telegram      │────│    Bot Server    │────│ Message Builder │
+│   Users         │    │  (Webhook Mode)  │    │ (Rich Format)   │
+└─────────────────┘    └──────────────────┘    └─────────────────┘
                                 │
                        ┌─────────────────┐
-                       │   Job Scheduler │
+                       │   Scheduler     │
                        │   (Daily 9AM)   │
                        └─────────────────┘
-                                │
-                       ┌─────────────────┐
-                       │   SQLite DB     │
-                       │ (User mgmt)     │
-                       └─────────────────┘````
-
-### Data Flow1. **Collection**: RSS feeds fetched every 4 hours
-2. **Processing**: AI analysis for sentiment & relevance
-3. **Ranking**: Stories scored and top 10 selected
-4. **Delivery**: Formatted messages sent via Telegram
-5. **Storage**: User preferences and analytics stored
-
-## 🔧 Development Guide### Project Structure```
+🔧 Development
+Project Structure
+text
 crypto-news-bot-v2/
-├── 📁 src/
-│   ├── main.py              # 🚀 Bot entry point &```mmand handlers
-│   ├── config.py           # ⚙️ Configuration settings```  ├── database.py         # 🗄️ SQLite user management
-│   ├── news_aggregator.py  # 📰 RSS fee```rocessing
-│   ├── ai_processor.py     # 🧠 Sentiment analysis &```sights
-│   ├── digest_formatter.py # 💌 Message formatting
-│   └── scheduler.py        # ⏰ Daily digest automation```─ 📁 tests/
-│   ├── test_news_aggregator.py
-│   ├── test_ai_processor.py
-│   └── test_bot_commands.py
-├── 📁 docs/
-│   ├── API.md
-│   ├── DEPLOYMENT.md
-│   └── CONTRIBUTING.md
-├── requirements.txt        # 📦 Python dependencies```─ Procfile               # 🚀 Deployment configuration
-├── Dockerfile            # 🐳 Container configuration
-├── render.yaml           # ☁️ Render.``` configuration
-├── runtime.txt           # 🐍 Python version specification
-└── README.md            # 📖 This file
-```
-
-### Local Development Setup```bash
-# Development dependencies
-pip install -r requirements-dev.txt
-
-# Pre-commit hooks
-pre-commit install
-
-# Run tests
-python -m pytest tests/ -v
-
-# Code formatting
-black src/
-isort src/
-
-# Type checking
-mypy src/
-```
-
-### Adding New Features#### Custom Commands
-```python
-# main.py
+├── main.py              # Bot entry point & command handlers
+├── config.py           # Configuration settings
+├── database.py         # SQLite user management
+├── news_aggregator.py  # RSS feed processing
+├── ai_processor.py     # Sentiment analysis & insights
+├── digest_formatter.py # Message formatting
+├── scheduler.py        # Daily digest automation
+├── requirements.txt    # Python dependencies
+├── Procfile           # Deployment configuration
+└── README.md          # This file
+Adding Custom Features
+python
+# Add new command in main.py
 async def custom_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handle /custom command"""
     await update.message.reply_text("Your custom response!")
 
 # Register in main()
 app.add_handler(CommandHandler("custom", custom_command))
-```
+📈 Performance & Monitoring
+Benchmarks
+Startup Time: ~15-30 seconds
 
-#### New News Sources
-```python
-# config.py
-NEWS_SOURCES['new_source'] = {
-    'url': 'https://newssite.com/rss',
-    'weight': 0.8,
-    'categories': ['defi', 'bitcoin'],
-    'enabled': True
-}
-```
+News Processing: ~45-90 seconds for full digest
 
-#### Enhanced AI Processing
-```python
-# ai_processor.py
-def analyze_market_impact(title, content):
-    """Analyze potential market impact of news"""
-    impact_score = calculate_impact(title, content)
-    return {
-        'score': impact_score,
-        'reasoning': generate_reasoning(title, content)
-    }
-```
+Memory Usage: ~180-250MB (lightweight)
 
-## 📈 Performance Metrics### Benchmarks| Metric | Performance | Target |
-|--------|-------------|---------|
-| **Startup Time** | ~15-30 seconds | < 30s |
-| **News Processing** | ~45-90 seconds | < 2 minutes |
-| **Memory Usage** | ~180-250MB | < 300MB |
-| **Response Time** | ~1-3 seconds | < 5s |
-| **Daily Active Users** | 1000+ supported | Scalable |
-| **Uptime** | 99.5%+ | > 99% |
+Response Time: ~1-3 seconds per command
 
-### Optimization Features- **Async/await**: Non-blocking operations
-- **Connection pooling**: Efficient HTTP requests
-- **Caching**: Redis-compatible memory cache
-- **Rate limiting**: Prevents API abuse
-- **Batch processing**: Efficient database operations
+Concurrent Users: 1000+ supported on free tier
 
-## 🐛 Troubleshooting### Common Issues & Solutions#### Bot Not Responding
-```bash
-# Check webhook status
-curl "https://api.telegram.org/bot<TOKEN>/getWebhookInfo"
-
-# Reset webhook
-curl "https://api.telegram.org/bot<TOKEN>/setWebhook?url=<YOUR```L>/webhook"
-```
-
-#### News Not Loading
-```python
-# Check RSS feeds
-python -c "
-import requests
-for source, url in NEWS_SOURCES.items```
-    try:
-        r = requests.get(url['url'], timeout=10)
-        print(f'{source}: {r.status_code}')
-    except Exception as e:
-        print(f'{source}: ERROR - {e}')
-"
-```
-
-#### Memory Issues
-```yaml
-# render.yaml - Increase memory
-services:
-  - type: web
-    plan: starter  # Upgrade from free```er
-    env: python
-```
-
-#### Scheduler Not Working
-```python
-# Check timezone settings
-import datetime
-print(f"Current time: {datetime.datetime.now()} UTC")
-print(f"Next scheduled run: {scheduler.get_jobs()}")
-```
-
-### Debug Mode```bash
-# Enable detailed logging
-export DEBUG_MODE=true
-python main.py
-```
-
-### Health Check Endpoint```bash
-# Check if bot is running
+Health Check
+bash
+# Verify bot status
 curl https://your-app.onrender.com/health
 
-# Expected response
+# Response
 {
   "status": "healthy",
   "uptime": "2 days, 14 hours",
-  "subscribers": 1247,
-  "last_digest": "2025-09-02T09:00:00Z"
+  "subscribers": 1247
 }
-```
+🐛 Troubleshooting
+Common Issues
+Bot Not Responding
 
-## 📊 Analytics & Monitoring### Built-in Metrics- **User engagement**: Command usage statistics
-- **Content performance**: Most shared stories
-- **System health**: Response times and errors
-- **Growth metrics**: New subscribers and retention
+bash
+# Check webhook status
+curl "https://api.telegram.org/bot<TOKEN>/getWebhookInfo"
 
-### Logging```python
-import logging
+# Reset if needed
+curl "https://api.telegram.org/bot<TOKEN>/setWebhook?url=<YOUR_URL>/webhook"
+News Not Loading
 
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
+Verify RSS feeds are accessible
 
-# Custom metrics
-logger.info(f"Processed {len(articles)} articles")
-logger.info(f"Sent digest to {subscriber_count} users")
-```
+Check internet connectivity
 
-## 🔐 Security & Privacy### Data Protection- **No personal data storage**: Only user IDs and preferences
-- **Secure API communication**: HTTPS only
-- **Token security**: Environment variables only
-- **Rate limiting**: Prevents abuse and spam
+Review logs for specific errors
 
-### Best Practices```python
-# Input validation
-def validate_user_input(text: str) -> bool:
-    return len(text) < 100 and text.isascii()
+Memory/Performance Issues
 
-# Secure database queries
-cursor.execute("SELECT * FROM users WHERE id = ?", (user_id,))
-```
+Restart the service
 
-## 🚀 Advanced Features### Custom Webhooks```python
-# Support for custom integrations
-@app.route('/api/news', methods=['POST'])
-def custom_news_webhook():
-    """Accept custom news from external sources"""
-    data = request.get_json()
-    process_custom_news(data)
-    return {"status": "processed"}
-```
+Consider upgrading to paid hosting tier
 
-### Multi-language Support```python
-# Internationalization ready
-MESSAGES = {
-    'en': {'welcome': 'Welcome to Crypto News Bot!'},
-    'es': {'welcome': '¡Bienvenido al Bot de Noticias Crypto!'},
-    'fr': {'welcome': 'Bienvenue sur le Bot d\'Actualités Crypto!'}
-}
-```
+Check for memory leaks in logs
 
-### Premium Features (Optional)- **Custom news sources**: User-defined RSS feeds
-- **Portfolio tracking**: Price alerts for holdings
-- **Advanced filtering**: Keywords and categories
-- **Export options**: PDF reports and CSV data
+📝 Usage Examples
+Daily Digest Sample
+text
+🗞️ CRYPTO NEWS DIGEST - Sep 2, 2025
 
-## 📝 LicenseMIT License
+📈 BULLISH (4 stories)
+• Bitcoin ETF Sees $2.1B Inflow This Week
+• Ethereum Upgrade Reduces Gas Fees by 40%
 
-```
-Copyright (c) 2025 Crypto News Bot Contributors
+📉 BEARISH (2 stories)  
+• SEC Increases Crypto Exchange Scrutiny
+• Major Exchange Reports Security Incident
 
-Permission is hereby granted, free of```arge, to any person obtaining a copy``` this software and associated documentation files```he "Software"), to deal
-in the Software without restriction, including without```mitation the rights
-to use, copy, modify, merge, publish, distribute```ublicense, and/or sell```pies of the Software, and to permit persons to whom the Software is```rnished to do so, subject to the following conditions:
+😐 NEUTRAL (4 stories)
+• New DeFi Protocol Launches on Polygon
+• Crypto Conference Announces 2025 Dates
 
-The above copyright notice and this permission notice shall be included in```l
-copies or substantial portions of the```ftware.
-```
+💡 AI Insight: Strong institutional adoption signals continue to drive positive sentiment despite regulatory uncertainties.
+🤝 Contributing
+We welcome contributions! Here's how:
 
-## 🤝 ContributingWe welcome contributions from the crypto community! Here's how to get involved:
+Fork the repository
 
-### Quick Contribution Guide```bash
-# 1. Fork the repository on GitHub
-# 2. Clone your fork
-git clone https://github.com/yourusername/crypto-news-bot-v2.git
+Create a feature branch: git checkout -b feature/amazing-feature
 
-# 3. Create a feature branch
-git checkout -b feature/amazing-feature
+Make your changes and test thoroughly
 
-# 4. Make your changes and test
-python -m pytest
+Submit a pull request with clear description
 
-# 5. Commit with clear message
-git commit -m "Add amazing feature that does X"
+Areas We Need Help With
+🌍 Multi-language support
 
-# 6. Push and create pull request
-git push origin feature/amazing-feature
-```
+📊 Advanced analytics and metrics
 
-### Areas We Need Help With- 🌍 **Translations**: Multi-language support
-- 📊 **Analytics**: Advanced metrics and reporting
-- 🎨 **UI/UX**: Better message formatting and user experience
-- 🔧 **Integration**: Support for more news sources
-- 📖 **Documentation**: User guides and API docs
-- 🧪 **Testing**: Unit tests and integration tests
+🔧 Additional news source integrations
 
-### Code Style Guidelines- **Python**: Follow PEP 8 with Black formatter
-- **Commits**: Use conventional commit format
-- **Documentation**: Docstrings for all functions
-- **Testing**: Minimum 80% code coverage
+📖 Documentation improvements
 
-## 🌟 Support & Community### Get Help- 💬 **GitHub Issues**: [Report bugs or request features](https://github.com/yourusername/crypto-news-bot-v2/issues)
-- 📧 **Email**: crypto-bot-support@yourdomain.com
-- 💬 **Telegram**: Join our [community chat](https://t.me/cryptonewsbotcommunity)
-- 📖 **Documentation**: [Full docs site](https://crypto-news-bot.gitbook.io/)
+📞 Support
+Issues: GitHub Issues
 
-### Show Support- ⭐ **Star the repository** if you find it useful
-- 🐦 **Share on Twitter** with #CryptoNewsBot
-- 💰 **Sponsor development** via GitHub Sponsors
-- 🔗 **Share with friends** in the crypto community
+Community: Telegram Chat
 
-### Roadmap & UpdatesFollow our development progress:
-- 📋 **GitHub Projects**: [View roadmap](https://github.com/yourusername/crypto-news-bot-v2/projects)
-- 📝 **Changelog**: [Release notes](https://github.com/yourusername/crypto-news-bot-v2/releases)
-- 📢 **Announcements**: [Telegram channel](https://t.me/cryptonewsbotupdates)
+Email: support@yourbot.com
 
-***
+📄 License
+MIT License - feel free to use and modify for your projects.
 
 <div align="center">
+Built with ❤️ for the crypto community
 
-**Built with ❤️ for the crypto community**
-
-*Stay informed, trade smarter, profit better* 📈
+Stay informed, trade smarter 📈
 
 [
 
